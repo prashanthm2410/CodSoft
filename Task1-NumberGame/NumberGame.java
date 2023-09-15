@@ -1,6 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
-class Main {
+import java.util.InputMismatchException;
+class NumberGame {
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
         System.out.println("Welcome to the Number Guessing Game!");
