@@ -39,7 +39,7 @@ class Main {
                     System.out.println("Guess is too low.");
                 }
                 score++;
-            }catch(Exception e) {
+            }catch(InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a valid number.");
                 read.nextLine();
             }
