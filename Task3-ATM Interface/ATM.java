@@ -5,21 +5,21 @@ import java.awt.event.ActionListener;
 class BankAccount {
     private int balance;
     public BankAccount() {
-        balance = 1000;
+        balance=1000;
     }
     public void withdraw(int amount) {
-        if (amount > balance) {
+        if (amount>balance) {
             JOptionPane.showMessageDialog(null, "Insufficient funds in the account");
-        } else {
+        }else {
             balance -= amount;
             JOptionPane.showMessageDialog(null, "Wait for a moment...\nYour cash is being dispensed.\nTransaction completed.");
         }
     }
     public void deposit(int amount) {
-        if (amount > 0) {
-            balance += amount;
+        if (amount>0) {
+            balance+=amount;
             JOptionPane.showMessageDialog(null, "Wait for a moment...\nYour deposit is being processed.\nTransaction completed.");
-        } else {
+        }else {
             JOptionPane.showMessageDialog(null, "Invalid deposit amount.");
         }
     }
@@ -33,18 +33,18 @@ public class ATM extends JFrame implements ActionListener {
     public ATM() {
         setTitle("ATM Simulator");
         setLayout(new FlowLayout());
-        JLabel label = new JLabel("Enter your choice:");
+        JLabel label=new JLabel("Enter your choice:");
         add(label);
         JButton withdrawButton = new JButton("Withdraw");
         add(withdrawButton);
         withdrawButton.addActionListener(this);
-        JButton depositButton = new JButton("Deposit");
+        JButton depositButton=new JButton("Deposit");
         add(depositButton);
         depositButton.addActionListener(this);
-        JButton checkBalanceButton = new JButton("Check Balance");
+        JButton checkBalanceButton=new JButton("Check Balance");
         add(checkBalanceButton);
         checkBalanceButton.addActionListener(this);
-        amountField = new JTextField(10);
+        amountField=new JTextField(10);
         add(amountField);
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,12 +55,12 @@ public class ATM extends JFrame implements ActionListener {
         String choice = e.getActionCommand();
         switch (choice) {
             case "Withdraw":
-                int withdrawAmount = Integer.parseInt(amountField.getText());
+                int withdrawAmount=Integer.parseInt(amountField.getText());
                 account.withdraw(withdrawAmount);
                 JOptionPane.showMessageDialog(null, "Your account balance is: ₹" + account.checkBalance());
                 break;
             case "Deposit":
-                int depositAmount = Integer.parseInt(amountField.getText());
+                int depositAmount=Integer.parseInt(amountField.getText());
                 account.deposit(depositAmount);
                 JOptionPane.showMessageDialog(null, "Your account balance is: ₹" + account.checkBalance());
                 break;
