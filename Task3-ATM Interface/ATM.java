@@ -11,7 +11,7 @@ class BankAccount {
         if (amount>balance) {
             JOptionPane.showMessageDialog(null, "Insufficient funds in the account");
         }else {
-            balance -= amount;
+            balance-=amount;
             JOptionPane.showMessageDialog(null, "Wait for a moment...\nYour cash is being dispensed.\nTransaction completed.");
         }
     }
