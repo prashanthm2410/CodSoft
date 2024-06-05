@@ -1,20 +1,14 @@
-// COMP106 Assignment 3 - ATM | James Oakes | u6jo | 201161332 | J.L.R.Oakes@liverpool.ac.uk
-
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
 public class ATM extends JFrame {
-	//Variables for balance, the input from the user for deposits,
-	//and for checking that they have clicked Deposit before clicking Enter
 	int balance = 10;
 	String[] inputSequence = new String[4];
 	String[] transactionHist = new String[100];
 	int inputSequenceIndex = 0;
 	int transactionIndex = 0;
 	boolean readyToEnter = false;
-	//Basic Constructor Setup - Setting the input array as empty
-	//Other basic setup options - Setting size, locaion etc, building app
 	public ATM(){
 		super("ATM");
 		for(int i =0; i <= 3; i++){
@@ -30,10 +24,6 @@ public class ATM extends JFrame {
 	}
 	
 	protected void buildApp(){
-		//==================================
-		//GUI Setup (VIEW)
-		//==================================
-		//Basic Panel layout setup
 		JLabel displayArea = new JLabel("<html>Instruction Area: <br> Please select a function from the buttons below <br> Current Balance: \u20B9" + balance + "</html>");
 		displayArea.setOpaque(true);
 		displayArea.setBackground(Color.white);
@@ -146,10 +136,6 @@ public class ATM extends JFrame {
 		add(displayArea,  BorderLayout.NORTH);
 		add(bottomArea, BorderLayout.CENTER);
 		
-		//==================================
-		//Action Listener Setup (CONTROLLER)
-		//==================================
-		// 3 Withdraw buttons (Simply minus from balance if balance is not below ammount):
 		withDraw1.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event) {
 				if(balance >= 5){
@@ -263,6 +249,7 @@ public class ATM extends JFrame {
 				inputDisplay.setText("Input Display: " + updateInput("0"));
 			}	
 		});
+
 		// Deposit Button - Primes program for a deposit, allows user to click enter deposit
 		deposit.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event) {
@@ -304,10 +291,6 @@ public class ATM extends JFrame {
 			}	
 		});	
 	} 
-	//==================================
-	//Extra Methods for calculations(MODEL)
-	//==================================		
-	//Clears the string and resets the Input area
 	void clearInput(){
 		for(int i =0; i <= 3; i++){
 			inputSequence[i] = "";	
