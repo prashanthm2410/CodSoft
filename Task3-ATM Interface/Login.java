@@ -7,7 +7,6 @@ public class Login extends JFrame {
 	String pin = "1234";
 	int attempts = 3;
 	public Login(){
-		//Basic Constructor Setup
 		super("Login Screen");
 		setLayout(new BorderLayout());
 		setResizable(false);
@@ -23,10 +22,7 @@ public class Login extends JFrame {
 		new Login();		
 	}
 	
-	void buildApp(){
-		//===================================================
-		//GUI Setup
-		//===================================================		
+	void buildApp(){	
 		JLabel pinInstruction = new JLabel("Please enter your pin number");
 		JPasswordField pinText = new JPasswordField(4);
 		JButton entPin = new JButton("Enter");
@@ -40,9 +36,6 @@ public class Login extends JFrame {
 		add(pinText, BorderLayout.CENTER);
 		add(buttonPanel, BorderLayout.SOUTH);
 		
-		//===================================================
-		//Action Listener Setup
-		//===================================================
 		quit.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event) {
 				System.exit(0);
